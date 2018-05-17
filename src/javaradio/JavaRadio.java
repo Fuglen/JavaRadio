@@ -5,7 +5,6 @@ import org.iot.raspberry.grovepi.devices.GroveRgbLcd;
 import org.iot.raspberry.grovepi.GrovePi;
 import org.iot.raspberry.grovepi.pi4j.GrovePi4J;
 
-
 public class JavaRadio {
 
   
@@ -13,6 +12,7 @@ public static void main(String[] args) throws Exception {
 
 MultiThreading obj = new MultiThreading(); //Vi laver et objekt, så vi kan starte en tråd
 obj.start(); //Tråden startes
+
 
 GrovePi grovePi = new GrovePi4J();//Laver endnu et objekt, så vi kan bruge knapper og LCD
 
@@ -29,7 +29,8 @@ String currentSong = null;
 
 lcd.setRGB(0, 0, 255);//Sætter LCD-skærmen til blå.
 System.out.println(obj.getSong());
-while(!Exit) {//,
+
+while(!Exit) {
     if(!DisplayUpdated){
         lcd.setText("\n" + obj.getSong());
         currentSong = obj.getSong();
